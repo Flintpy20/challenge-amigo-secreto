@@ -29,3 +29,17 @@ function exibirAmigos() {
         lista.appendChild(item);
     }
 }
+
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("Nenhum amigo na lista para sortear.");
+        return;
+    }
+    
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    let amigoSorteado = amigos[indiceAleatorio];
+    let lista = document.getElementById('listaAmigos');
+    lista.innerHTML = '';
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `O amigo secreto sorteado é: <li>${amigoSorteado}</li>`;
+}
