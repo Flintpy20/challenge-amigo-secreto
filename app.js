@@ -18,9 +18,15 @@ function limparCampo() {
     campo.value = '';
 }
 
-function exibirAmigos() {
+function limparListaAmigos() {
     let lista = document.getElementById('listaAmigos');
     lista.innerHTML = '';
+}
+
+function exibirAmigos() {
+    limparListaAmigos();
+    let lista = document.getElementById('listaAmigos');
+
     
     for (let i = 0; i < amigos.length; i++) {
         let item = document.createElement('li');
@@ -38,8 +44,7 @@ function sortearAmigo() {
     
     let indiceAleatorio = Math.floor(Math.random() * amigos.length);
     let amigoSorteado = amigos[indiceAleatorio];
-    let lista = document.getElementById('listaAmigos');
-    lista.innerHTML = '';
+    limparListaAmigos();
     let resultado = document.getElementById('resultado');
     resultado.innerHTML = `O amigo secreto sorteado é: <li>${amigoSorteado}</li>`;
 }
